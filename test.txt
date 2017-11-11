@@ -1,8 +1,12 @@
 common commends for git
 git init
+
 git config --global
 git add .
 git commit
-git push 
+git remote add origin
+
+git push -u
+
 git pull
 git clone
