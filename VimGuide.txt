@@ -1,0 +1,10 @@
+command mode:
+
+i 	//insert
+a 	// after curren
+Y 	//copy
+cut 	//delete line text
+yy 	//copy whole line 
+:%s	//search
+:q!	//quit whithout save
+:wq	//save and quit
