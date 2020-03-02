@@ -58,6 +58,7 @@ git push origin --delete calc-divide
 git log 
 git diff %show changes that didnt added
 
+
 %daily rutine:
 git branch substract 
 git checkout substract
