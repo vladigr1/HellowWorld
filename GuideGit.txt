@@ -1,11 +1,15 @@
 common commends for git
 git init
+git <verb> --help 
 
 git config --global user.name
 git config --get user.name
+git config --list
 
-git add .
-git commit
+git add -A % adding all to staging directory
+git reset calc.py %remove file from staging area
+git reset
+git commit -m "commit message"
 
 git remote add origin
 git remote -v
@@ -13,10 +17,57 @@ git remote remove origin
 
 git push -u
 
-git pull
+
+%cloning a remote repo
 git clone
+git remote -v %the info repository
+git branch -a %list branches localy and remotly
+git pull origin master %pulling from origin all updates
+git push origin master
 
 
-unique file names
-.gitignore
-READEME.md
+%gitignore:
+touch .gitignore %create the files for ignore
+.gitignore:
+*.pyc %ignore all file ___.pyc
+
+
+%local project tracking
+git init
+git status
+
+%branch: common work flow which work on single fitter on one branch
+git branch %show the current branch you are working on
+git branch substract %create branch
+git chechkout calc-divide
+git checkout calc-divide
+git push -u origin calc-divide % push the branch to the origin next time use git push git pull to it
+
+%merge with master
+git checkout master
+git pull origin master
+git branch --merged %show merged branches not nessery need to localy and epository delete
+git merge calc-divide %merge to master
+git push origin master %push to repository
+
+$delete branch
+git branch -d clac-divide %delete local 
+git push origin --delete calc-divide
+
+%log
+git log 
+git diff %show changes that didnt added
+
+%daily rutine:
+git branch substract 
+git checkout substract
+%modifiy substract
+git status %check changes
+git add -A
+git commit -m "substract"
+%git pull origin master
+git push -u origin substract
+%test substract
+git pull origin master
+git merge substract
+git push origin master
