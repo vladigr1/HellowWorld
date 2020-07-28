@@ -1,0 +1,15 @@
+%italic text: can be set on headers
+_text_
+
+%bold text: can't be set on headers
+**text**
+
+%Headers: pick the level by number of # (1-6 levels)
+# Title
+
+%link:inline link: formatted [text](link)
+[google it](www.google.com)
+
+%link:reference: reference to another place in the ducument.
+%[text][refrence]
+%[refrence]: www.github.com
