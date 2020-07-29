@@ -13,3 +13,64 @@ _text_
 %link:reference: reference to another place in the ducument.
 %[text][refrence]
 %[refrence]: www.github.com
+
+%images: same as links but added !
+![]()
+
+%blockquotes:
+>"never surrender."
+> never
+> surrender.
+
+%list: 
+* milk
+* bread
+
+1. milk
+2. bread
+
+*shopping
+ * milk
+
+ * shopping
+  * milk
+ * task
+ //to have multi pargraph in one list the indent must be the same
+
+%softbreak:
+soft break need to spaces  
+or \
+
+%table:
+| first | second |
+| ----- | ------ |
+| data  | data   |
+
+| first | second | thrid  |
+| :---- | -----: | :----: |
+| ali l | ali c  | ali r  |
+
+%code
+```json
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+```
+%footnote
+Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+
+[^1]: This is the first footnote.
+
+[^bignote]: Here's one with multiple paragraphs and code.
+
+    Indent paragraphs to include them in the footnote.
+
+    `{ my code }`
+
+    Add as many paragraphs as you like.
+%task list
+- [x] Write the press release
+- [ ] Update the website
+- [ ] Contact the media

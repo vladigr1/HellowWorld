@@ -2,53 +2,57 @@
  	 k	//up
 //left	h l	//right 
 	 j	//down
-ctrl-shft-w ctrl-shft-w 	//move between windows
+ctrl-w-<motion>	//move between windows
+ctrl-w-v	//open window
+ctrl-w-s	//open window to bottom 
 ctrl-shft-d	//scroll window down
 ctrl-shft-u	//scroll window up
 
 % mode
-i R v
+i R v 
+ctrl-v 		//block view mode
+shft-v		//line view mode
 
 % commands
  d p r c g o O a A e
 //in : their is auto-complition tab or ctrl-d
 
 % write and quit
-:q!	//quit whithout save
-:wq	//save and quit
+:q!		//quit whithout save
+:wq		//save and quit
 :wq <file>	//save into file and quit
 :!<command>	//check writen by :!ls
 
 % Basic Rule: operator-[number]-motion 
 
 % motion
-w	//word
-b	//back a word
-e	//end word
-^	//start line
-$	//end line
-<count>-<motion>	//count==number of time you want to do motion
+w		//word
+b		//back a word
+e		//end word
+^		//start line
+$		//end line
+<count>-<motion>//count==number of time you want to do motion
 
 % deletion 
-x	//delete single char
+x		//delete single char
 d<motion>	//delete==operator motion==parm 
 d<count><motion>
-dw	//delete word (can be de if you dont want to delete the sapce)
-d$	//delete [cursor,endline]
-dd	//delete whole line
+dw		//delete word (can be de if you dont want to delete the sapce)
+d$		//delete [cursor,endline]
+dd		//delete whole line
 <count>-dd
 
 % put replace change
 //deleted line stored in a vim register.
-p	//put
-r	//replace char
-shft-r	//Replace mode replace until pressed esc
-ce	//correct word
+p		//put
+r		//replace char
+shft-r		//Replace mode replace until pressed esc
+ce		//correct word
 c-[number]-<motion>
 
 % undo and redu
-u	//undo once
-U	//undo whole line
+u		//undo once
+U		//undo whole line
 ctrl-shft-r	//redu
 
 % location nevigation search
@@ -69,16 +73,17 @@ ctrl-i			//go forword to where you came
 /<pattern>\c		//ignore case sensitive only to this search
 
 % subtitue command
-:s/thee/the 	//first occurrence of "thee" in the line.
-:s/thee/the/g   //Adding the  g  flag means to substitute globally in the line.
-:s/old/new/g   	//where #,# are the line numbers of the range
-		//of lines where the substitution is to be done.
-:%s/old/new/g   //to change every occurrence in the whole file.
-:%s/old/new/gc 	//to find every occurrence in the whole file,
-     		//with a prompt whether to substitute or not.
+:s/thee/the 		//first occurrence of "thee" in the line.
+:s/thee/the/g   	//Adding the  g  flag means to substitute globally in the line.
+:s/old/new/g   		//where #,# are the line numbers of the range
+			//of lines where the substitution is to be done.
+:%s/old/new/g   	//to change every occurrence in the whole file.
+:%s/old/new/gc 		//to find every occurrence in the whole file,
+     			//with a prompt whether to substitute or not.
+		
 % slecting text to write
-v		//view mode
-:		//in view mode will typed :'<,'>
+v			//view mode
+:			//in view mode will typed :'<,'>
 :'<,'>w <file name>	//write selected lines to the file
 <operator>		//in view mode you can use d y c
 :r <file name>		//retrive file
@@ -87,4 +92,3 @@ y-<motion>
 
 %help
 f1	//open help
-
