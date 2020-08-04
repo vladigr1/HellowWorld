@@ -10,9 +10,9 @@ _text_
 %link:inline link: formatted [text](link)
 [google it](www.google.com)
 
-%link:reference: reference to another place in the ducument.
-%[text][refrence]
-%[refrence]: www.github.com
+%link:reference: reference to another place in the document.
+%[text][reference]
+%[reference]: www.github.com
 
 %images: same as links but added !
 ![]()
@@ -35,9 +35,9 @@ _text_
  * shopping
   * milk
  * task
- //to have multi pargraph in one list the indent must be the same
+ //to have multi paragraph in one list the indent must be the same
 
-%softbreak:
+%soft break:
 soft break need to spaces  
 or \
 
@@ -46,7 +46,7 @@ or \
 | ----- | ------ |
 | data  | data   |
 
-| first | second | thrid  |
+| first | second | thirds  |
 | :---- | -----: | :----: |
 | ali l | ali c  | ali r  |
 
