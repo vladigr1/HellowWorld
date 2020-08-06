@@ -1,1 +1,0 @@
-./semster | grep last-m > last-modified.txt
