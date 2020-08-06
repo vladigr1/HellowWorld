@@ -5,8 +5,10 @@
 ctrl-w-<motion>	//move between windows
 ctrl-w-v	//open window
 ctrl-w-s	//open window to bottom 
-ctrl-shft-d	//scroll window down
-ctrl-shft-u	//scroll window up
+ctrl-d		//scroll window down
+ctrl-u		//scroll window up
+ctrl-w_         //maximize current window
+ctrl-w=        	// make all equal size
 
 % mode
 i R v 
