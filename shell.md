@@ -15,6 +15,41 @@ note: **itldr** man page with examples
 
 Start a command with a leading space it wont be added to your shell history.
 
+## Job control 
+
+`jobs` command that list the unfinshed jobs associated with the curren terminal session. 
+
+`fg` place a job into the foreground shall 
+`bg` place a job into the background jobs
+`&` suffix in a command that will make the command run in the background
+
+Signals are message pro process that interrupt the process.
+
+* SIGINT , when typing `ctrl-c`
+* SIGQUIT , when typing `ctrl-\\`
+* SIGTERM , generic signal for asking a process to exit gracefully (`kill -TERM <PID>`)
+* SIGTSTP , `ctrl-z`
+* SIGKILL , terminate imdiatly not recommanded may leave orphaned children processes.
+
+Example in python
+
+```python
+
+#!/usr/bin/env python
+import signal, time
+
+def handler(signum, time):
+    print("\nI got a SIGINT, but I am not stopping")
+
+signal.signal(signal.SIGINT, handler)
+i = 0
+while True:
+    time.sleep(.1)
+    print("\r{}".format(i), end="")
+    i += 1
+
+```
+
 ## Shell environment
 
 List of name-value pairs,
