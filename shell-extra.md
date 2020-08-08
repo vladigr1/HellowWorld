@@ -94,7 +94,7 @@ How should you organize your dotfiles? They should be in their own folder, under
 * Change tracking: you’re probably going to be maintaining your dotfiles for your entire programming career, and version history is nice to have for long-lived projects.
 
 you can find tons of dotfiles repositories on Github — see the most popular one 
-[here](https://missing.csail.mit.edu/2020/command-line/)
+[here](https://github.com/mathiasbynens/dotfiles)
 (we advise you not to blindly copy configurations though). Here is another good resource on the topic.
 
 All of the class instructors have their dotfiles publicly accessible on GitHub: 

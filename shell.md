@@ -3,12 +3,12 @@
 Shell is textual interface.\
 bash == Bourne Again SHEll.
 
-Note: shell parse the arugment by white space.\
-optinal Solution:
+Note: shell parse the argument by white space.\
+optimal Solution:
 
-* single quates == inhabit all interptation of sequence of char  ` 'my photo' ` 
-* double quates == surpress  ` "my photo" ` 
-* escape charcter == remove special meaning `my\ photo ` 
+* single quotes == inhabit all interstation of sequence of char  ` 'my photo' ` 
+* double quotes == suppress  ` "my photo" ` 
+* escape character == remove special meaning `my\ photo ` 
 
 In case you are stuck use man or --help/-h flag (on windows `/?`).\
 note: **itldr** man page with examples
@@ -17,7 +17,7 @@ Start a command with a leading space it wont be added to your shell history.
 
 ## Job control 
 
-`jobs` command that list the unfinshed jobs associated with the curren terminal session. 
+`jobs` command that list the unfinished jobs associated with the current terminal session. 
 
 `fg` place a job into the foreground shall 
 `bg` place a job into the background jobs
@@ -29,7 +29,7 @@ Signals are message pro process that interrupt the process.
 * SIGQUIT , when typing `ctrl-\\`
 * SIGTERM , generic signal for asking a process to exit gracefully (`kill -TERM <PID>`)
 * SIGTSTP , `ctrl-z`
-* SIGKILL , terminate imdiatly not recommanded may leave orphaned children processes.
+* SIGKILL , terminate immediately not recommended may leave orphaned children processes.
 
 Example in python
 
@@ -56,8 +56,8 @@ List of name-value pairs,
 when executing a command that doesn't match to programming keywords,
 it consults an environment variable called `$PATH`.
 
-## Nevigating in the shell
-The path is sperated by 
+## Navigating in the shell
+The path is separated by 
 `/`
 character.\
 The path 
@@ -106,7 +106,7 @@ Redirecting IO.
 * \> == write to file
 * \>> == append to file
 * < == read from file
-* | == pipe (chain command outputs to diffrent command)
+* | == pipe (chain command outputs to different command)
 
 note: | > < operations are done by shell In case of sudo use
 `echo 3 | sudo tee brightness`
@@ -116,15 +116,15 @@ tee program for writing
 
 ### Variables
 
-Same aspect to normal programming lanugages.
+Same aspect to normal programming languages.
 
-* `var=bar' == assign vairables in bash
+* `var=bar' == assign variables in bash
 * `$var` == access the value
 
-note: `foo = bar` would not work because it is intrepreted as calling the foo program with armuments = and bar.
+note: `foo = bar` would not work because it is interpreted as calling the foo program with arguments = and bar.
 
 String is defined by `'$var'` or `"$var"`.\
-The diffrence is that `''` only string but `""` check for variables too.
+The difference is that `''` only string but `""` check for variables too.
 
 ### Arguments
 
@@ -133,15 +133,15 @@ basic script will look like this:\
 ...\
 }`\
 
-the arugments are special variables (must use " " as mention before)
+the arguments are special variables (must use " " as mention before)
 
 * `$0` == name of the script
-* `$1` == first argument, script can contain 1-0 arugments
-* `$@` == all the arugments
+* `$1` == first argument, script can contain 1-0 arguments
+* `$@` == all the arguments
 * `$#` == number of arguments
-* `$?` == return code of prvious command
+* `$?` == return code of pervious command
 * `!!` == last command
-*  note: in case of **missing premission** use ` sudo !!`.
+*  note: in case of **missing permission** use ` sudo !!`.
 
 ### Short circuiting operators
 
@@ -165,14 +165,14 @@ false ; echo "This will always run"
 # This will always run
 ```
 
-### Commmand substituion
+### Command substitution
 
 getting output as a command variable.
 
-* `for file in $(ls)` == shell will first call ls and then iterate ove thos values.
-* `diff <(ls foo) <(ls bar))` == shows diffrence between files in dirs.
+* `for file in $(ls)` == shell will first call ls and then iterate over those values.
+* `diff <(ls foo) <(ls bar))` == shows difference between files in dirs.
 
-### Condtions
+### Conditions
 
 use **[[]]** rather then **[]** (less mistakes)
 
@@ -201,7 +201,7 @@ done
   For instance, given files foo, foo1, foo2, foo10 and bar, the command rm foo? will delete foo1 and foo2 whereas rm foo* will delete all but bar.
 * Curly braces {} - Whenever you have a common substring in a series of commands, you can use curly braces for bash to expand this automatically.\
   This comes in very handy when moving or converting files.
-  ```bash
+```bash
 # Globbing techniques can also be combined
 mv *{.py,.sh} folder
 # Will move all *.py and *.sh files
