@@ -82,7 +82,9 @@ ctrl-i			//go forword to where you came
 :%s/old/new/g   	//to change every occurrence in the whole file.
 :%s/old/new/gc 		//to find every occurrence in the whole file,
      			//with a prompt whether to substitute or not.
-		
+
+:,$s/old/new/g		//from cureent place to end search and replce
+
 % slecting text to write
 v			//view mode
 :			//in view mode will typed :'<,'>
