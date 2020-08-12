@@ -112,6 +112,11 @@ note: | > < operations are done by shell In case of sudo use
 `echo 3 | sudo tee brightness`
 tee program for writing
 
+In special case you you need to take data from standard input as an arguments use `xargs`
+
+```bash
+find -name '*.md' | xargs tar -cf archive.tar -v
+```
 ## Shell scripting
 
 ### Variables

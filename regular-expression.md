@@ -8,7 +8,7 @@ Languages for matching pattern of string
 [regular expression online debugger](https://regex101.com)\
 [doc for regular expression in vim](https://www.regular-expressions.info/refflavors.html)
 
-note: regular expression by default is greedy
+note: regular expression by default is greedy (non-greedy `.\{-}`)
 which mean, _continue from the first match pattern forward_
 
 ## flag:
