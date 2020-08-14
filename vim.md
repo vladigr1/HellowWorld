@@ -8,7 +8,7 @@ Vim is programmable (with Vimscript and other languages like Python).
 ## Modal editing 
 
 
-Vim is a modal editor which means _it has different modes for inserting text_.\
+Vim is a modal editor which means _it has different modes for inserting text_.
 
 * Normal == for movement and changing modes (by pressing esc from any other mode)
 * Insert == for inserting text ( by pressing i or cl in normal mode)
@@ -33,18 +33,18 @@ ctrl-w-s == open window to bottom \
 ctrl-d == scroll window down\
 ctrl-u == scroll window up\
 ctrl-w_ == maximize current window\
-ctrl-w= == make all equal size\
+ctrl-w= == make all equal size
 
 ### commands
  d p r c g o O a A e\
-//in Command-line mode (:) their is auto-completion tab or ctrl-d\
+//in Command-line mode (:) their is auto-completion tab or ctrl-d
 
 ### write and quit
 :q! == quit with out save\
 :wq == save and quit\
 :wq \<file\> == save into file and quit\
 :ls -- show open buffers\
-:!\<command\> == check written by :!ls\
+:!\<command\> == check written by :!ls
 
 ### Basic Rule: operator-[number]-motion 
 
@@ -54,7 +54,7 @@ b == back a word\
 e == end word\
 ^ == start line\
 $ == end line\
-\<count\>-\<motion\>//count==number of time you want to do motion\
+\<count\>-\<motion\>//count==number of time you want to do motion
 
 ### deletion 
 x == delete single char\
@@ -65,7 +65,7 @@ d$ == delete [cursor,end line]\
 dd == delete whole line\
 \<count\>-dd\
 di) == delete inside group\
-da) == delete all group \
+da) == delete all group 
 
 ### put replace change
 //deleted line stored in a vim register.\
@@ -76,12 +76,12 @@ ce == correct word\
 c-[number]-\<motion\>\
 ci( == cut inside\
 da) == delete all\
-~ == flip the case of character\
+~ == flip the case of character
 
 ### undo and redo
 u == undo once\
 U == undo whole line\
-ctrl-shift-r == redo\
+ctrl-shift-r == redo
 
 ### location navigation search
 \<line number\>-shift-g == go to line\
@@ -98,7 +98,7 @@ ctrl-i == go forward to where you came\
 % == jump from start end of group E.g (),[]\
 :set ic == ignore case sensitivity (disable :set noise)\
 :set hls is == highlighting matches (disable :nohlsearch)\
-/\<pattern\>\c == ignore case sensitive only to this search\
+/\<pattern\>\c == ignore case sensitive only to this search
 
 ### substitute command
 :s/thee/the == first occurrence of "thee" in the line.\
@@ -108,7 +108,7 @@ ctrl-i == go forward to where you came\
 :%s/old/new/g == to change every occurrence in the whole file.\
 :%s/old/new/gc == to find every occurrence in the whole file,\
  == with a prompt whether to substitute or not.\
-:,$s/old/new/g == from current place to end search and replace\
+:,$s/old/new/g == from current place to end search and replace
 
 ### selecting text to write
 v == view mode\
@@ -117,4 +117,4 @@ v == view mode\
 \<operator\> == in view mode you can use d y c\
 :r \<file name\> == retrieve file\
 y == in view mode yank\
-y-\<motion\>\
+y-\<motion\>
