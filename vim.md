@@ -39,6 +39,8 @@ ctrl-w= == make all equal size
  d p r c g o O a A e\
 //in Command-line mode (:) their is auto-completion tab or ctrl-d
 
+`\v` == very magic better regex
+
 ### write and quit
 :q! == quit with out save\
 :wq == save and quit\
@@ -101,6 +103,9 @@ ctrl-i == go forward to where you came\
 /\<pattern\>\c == ignore case sensitive only to this search
 
 ### substitute command
+
+[vim documentation : pattern](http://vimdoc.sourceforge.net/htmldoc/pattern.html#perl-patterns)
+
 :s/thee/the == first occurrence of "thee" in the line.\
 :s/thee/the/g == Adding the g flag means to substitute globally in the line.\
 :s/old/new/g == where #,# are the line numbers of the range\
@@ -108,7 +113,10 @@ ctrl-i == go forward to where you came\
 :%s/old/new/g == to change every occurrence in the whole file.\
 :%s/old/new/gc == to find every occurrence in the whole file,\
  == with a prompt whether to substitute or not.\
-:,$s/old/new/g == from current place to end search and replace
+:,$s/old/new/g == from current place to end search and replace\
+
+[Making a list of numbers](https://vim.fandom.com/wiki/Making_a_list_of_numbers)\
+:let i=1 | g/PATTERN/s//\='REPLACE_'.i/ | let i=i+1
 
 ### selecting text to write
 v == view mode\
