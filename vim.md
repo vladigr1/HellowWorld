@@ -70,7 +70,9 @@ di) == delete inside group\
 da) == delete all group 
 
 ### put replace change
-//deleted line stored in a vim register.\
+
+Deleting a line in vim will stored it for pasting.
+
 p == put\
 r == replace char\
 shift-r == Replace mode replace until pressed esc\
