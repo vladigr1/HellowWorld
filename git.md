@@ -168,6 +168,10 @@ interactive rebase using UI like vim to:
 * `git branch -d clac-divide` == delete local 
 * `git push origin --delete calc-divide`
 
+### restore a file from old commit
+
+* `git checkout 0a24 -- VimGuide.txt`
+
 ### tag = constant branch
 
 ### log
