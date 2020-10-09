@@ -13,12 +13,14 @@ In this repository the notation is:
 
 Tools that are covered:
 
-* git
 * mark down
 * shell (bash)
+* git (very basic)
 * regular expressions
 * vim
 * Data Wrangling (sed, awk)
+* python
+* html & css
 
 mostly based on 
 [Missing semester](https://missing.csail.mit.edu/)

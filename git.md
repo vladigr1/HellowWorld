@@ -222,7 +222,7 @@ Remote rejecter the push of commits directly to master because of the plicy on m
 
 ## Relative Refs
 
-Relative refs are memorable refs.
+**Relative refs are memorable refs.**
 
 * `git log` == show hased of commit tree (can neter shor hash)
 * `git checkout master^` == checkout master parent
@@ -241,6 +241,13 @@ Reverse changes in git has: (changes are for branch you are on)
 
 
 `git cherry-pick C2 C4` == way to copy a series of commits below your current location (`HEAD`)
+
+## Restore
+new `git reset`
+
+* `git restore --staged` == put local/head to your staged dir.
+* `git restore` == put local/head to your working directory.
+* `git restore --source=HEAD~1 file` == restore file from previous version
 
 ## cool stuff
 
