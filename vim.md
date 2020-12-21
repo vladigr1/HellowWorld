@@ -425,3 +425,13 @@ To execute the macro <number> times (once by default), type:
 * :diffupdate 	Re-scan the files for differences.
 * ZQ 	Quit without checking changes
 
+
+# :argdo, :exec, :normal
+you want to do something in multi buffer then use 
+arg buffers.\
+when you load into arg buffer you can use macro to all 
+buffers by `argdo`
+
+* `:normal` == from command mode use normal mode
+* `exec` == make possible using <Esc>
+* `argdo exec "normal 1GddO\<Esc>"` == Example
