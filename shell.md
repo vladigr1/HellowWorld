@@ -211,3 +211,9 @@ done
 mv *{.py,.sh} folder
 # Will move all *.py and *.sh files
 ```
+
+## Grep
+command find strin pattern in a file.
+* `egrep -zo "\/\*\*.*\*\/" */*.java` == find all java docs in current src folder
+  * -z == suppress newline at the end of line, substituting it for null character. That is, grep knows where end of line is, but sees the input as one big line.
+  * -o print only matching. Because we're using -z, the whole file is like a single big line, so if there is a match, the entire file would be printed; this way it won't do that.
