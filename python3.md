@@ -90,10 +90,24 @@ print(mystring.capitalize)
 ## Lists
 
 Lists are `arraylist`\
+<pre>
+ +---+---+---+---+---+---+
+ | P | y | t | h | o | n |
+ +---+---+---+---+---+---+
+   0   1   2   3   4   5 
+  -6  -5  -4  -3  -2  -1
+</pre>
+They are index as mention and it support `Slice`
+
+**NOT hasble type**
+
 **note**= accessing an index which does not exist generates an exception ( this why append resize then set you cant "directly" append
 * `mylist = []` == generate an empty list
 * `mylist,append(1)` == add 1 to the list
 * `mylist[0] = 2` == change first value to 2 
+* `[x*2 for x in vec]` == listing in a for loop equal to `squares = list(map(lambda x: x**2, range(10)))`
+* `mylist[0:]` == from index 0 to end
+
 ```python
 fruits = ['apple', 'oranges', 'grapes', 'pears']
 
@@ -158,6 +172,9 @@ t1 = ('apples', ) # single values need trailing commma
 ## Set 
 
 Collection which is unordered and unindexed. no duplicate members.
+
+### Types that aren't hasble:
+* list
 
 ```python
 s = {'a','b','c'}

@@ -78,6 +78,12 @@ is the "root" of the file system.
 * mkdir = make dir
 
 ## Find files
+How to use it
+```bash
+find ./ -name README.md
+```
+
+### Not trivial examples
 
 ```bash
 # Find all directories named src

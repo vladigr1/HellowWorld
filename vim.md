@@ -435,3 +435,5 @@ buffers by `argdo`
 * `:normal` == from command mode use normal mode
 * `exec` == make possible using <Esc>
 * `argdo exec "normal 1GddO\<Esc>"` == Example
+# put
+* `:put =range(11,15)` == put 11-15
