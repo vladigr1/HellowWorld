@@ -107,6 +107,7 @@ They are index as mention and it support `Slice`
 * `mylist[0] = 2` == change first value to 2 
 * `[x*2 for x in vec]` == listing in a for loop equal to `squares = list(map(lambda x: x**2, range(10)))`
 * `mylist[0:]` == from index 0 to end
+* `sorted(list)` == return list sorted `list.sort()` will only sort the current list
 
 ```python
 fruits = ['apple', 'oranges', 'grapes', 'pears']
@@ -125,6 +126,16 @@ print(fruits)
 
 fruits.pop(2)
 print(fruits)
+```
+
+### list comperhensions
+
+create ne list base on a nother list
+
+```python
+numbers = [34.6, -203.4, 44.9, 68.3, -12.2, 44.6, 12.7]
+newlist = [int(x) for x in numbers if x > 0]
+print(newlist)
 ```
 
 ## Numpy arrays
@@ -639,16 +650,6 @@ if type(fib()) == types.GeneratorType:
         counter += 1
         if counter == 10:
             break
-```
-
-## list comperhensions
-
-create ne list base on a nother list
-
-```python
-numbers = [34.6, -203.4, 44.9, 68.3, -12.2, 44.6, 12.7]
-newlist = [int(x) for x in numbers if x > 0]
-print(newlist)
 ```
 
 ## multiple function arguments
