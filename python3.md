@@ -138,6 +138,31 @@ newlist = [int(x) for x in numbers if x > 0]
 print(newlist)
 ```
 
+### list to Dictionary
+
+
+`b = dict(zip(a[::2], a[1::2]))`
+
+If a is large, you will probably want to do something like the following, which doesn't make any temporary lists like the above.
+
+```python
+from itertools import izip
+i = iter(a)
+b = dict(izip(i, i))
+```
+
+In Python 3 you could also use a dict comprehension, but ironically I think the simplest way to do it will be with range() and len(), which would normally be a code smell.
+```python
+b = {a[i]: a[i+1] for i in range(0, len(a), 2)}
+```
+
+So the iter()/izip() method is still probably the most Pythonic in Python 3, although as EOL notes in a comment, zip() is already lazy in Python 3 so you don't need izip().
+```python
+i = iter(a)
+b = dict(zip(i, i))
+```
+If you want it on one line, you'll have to cheat and use a semicolon. ;-)
+
 ## Numpy arrays
 
 easy way to do caculation across entire arrays.
