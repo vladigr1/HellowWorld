@@ -163,37 +163,6 @@ b = dict(zip(i, i))
 ```
 If you want it on one line, you'll have to cheat and use a semicolon. ;-)
 
-## Numpy arrays
-
-easy way to do caculation across entire arrays.
-
-```python
-# Create 2 new lists height and weight
-height = [1.87,  1.87, 1.82, 1.91, 1.90, 1.85]
-weight = [81.65, 97.52, 95.25, 92.98, 86.18, 88.45]
-
-# Import the numpy package as np
-import numpy as np
-
-# Create 2 numpy arrays from height and weight
-np_height = np.array(height)
-np_weight = np.array(weight)
-
-# Calculate bmi
-bmi = np_weight / np_height ** 2
-
-# Print the result
-print(bmi)
-```
-
-subsetting easy find
-```python
-# For a boolean response
-bmi > 23
-
-# Print only those observations above 23
-bmi[bmi > 23]
-```
 ## Tuple 
 
 unchanged collection
@@ -272,95 +241,13 @@ uppered_pets = list(map(str.upper, my_pets))
 
 print(uppered_pets)
 ```
-
-## filter
-
-first of all, requires the function to return boolean values (true or false) and then passes each element in the iterable through the function, "filtering" away those that are false.\
-filter(func, iterable)
-
-```python
-dromes = ("demigod", "rewire", "madam", "freer", "anutforajaroftuna", "kiosk")
-
-palindromes = list(filter(lambda word: word == word[::-1], dromes))
-
-print(palindromes)
-```
-## Reduce
-reduce applies a function of two arguments cumulatively to the elements of an iterable, optionally starting with an initial argument. 
-
-```python
-from functools import reduce 
-
-# Use map to print the square of each numbers rounded
-# to two decimal places
-my_floats = [4.35, 6.09, 3.25, 9.77, 2.16, 8.88, 4.59]
-
-# Use filter to print only the names that are less than 
-# or equal to seven letters
-my_names = ["olumide", "akinremi", "josiah", "temidayo", "omoseun"]
-
-# Use reduce to print the product of these numbers
-my_numbers = [4, 6, 9, 23, 5]
-
-# Fix all three respectively.
-map_result = list(map(lambda x: x**2, my_floats))
-filter_result = list(filter(lambda name: len(name) <=7, my_names))
-reduce_result = reduce(lambda num1, num2: num1 * num2, my_numbers, 1)
-
-print(map_result)
-print(filter_result)
-print(reduce_result)
-```
-
-
-## Pandas
-
-Pandas is a high-level data manipulation tool developed by Wes McKinney. It is built on the Numpy package and its key data structure is called the DataFrame. DataFrames allow you to store and manipulate tabular data in rows of observations and columns of variables.
-
-```python 
-dict = {"country": ["Brazil", "Russia", "India", "China", "South Africa"],
-       "capital": ["Brasilia", "Moscow", "New Dehli", "Beijing", "Pretoria"],
-       "area": [8.516, 17.10, 3.286, 9.597, 1.221],
-       "population": [200.4, 143.5, 1252, 1357, 52.98] }
-
-import pandas as pd
-brics = pd.DataFrame(dict)
-brics.index = ["BR", "RU", "IN", "CH", "SA"]
-print(brics)
-```
-
-* `pd.read_csv('cars.csv')` == read from csv
-* `print(cars['cars_per_cap'])` == print single index
-* `print(cars[0:4])` == access rows
-## function
-
-Block of code which only runs when it is called.\
-we do not use curly brackets, we use indentation with tabs or spaces 
-
-* `pass` == return null place order
-```python
-# create function 
-def sayhello(name = 'sam'):
-    print(f'hello {name}')
-sayhello('john dohn')
-
-#return values
-def getSum(num1, num2):
-    total = num1 + num2
-    return total
-print(getSum(3,4))
-
-#lambda function small anonymous function. (like arrow functions)
-getSum2 = lambda num1, num2 : num1 + num2
-print(getSum2(2,3))
-```
 ## operations
 
-the basic math:
+### the basic math:
 
 * `+`, `*`, `**`, `-`, `/`, `%`
 
-the string operation:
+## the string operation:
 * `'hello' + 'world'`
 * `'hello'*10`
 * `len(str)`
@@ -375,7 +262,7 @@ the string operation:
 * `print(astring.startswith("Hello"))` == is it start "Hello" then return True
 * `print(astring.endswith("asdfasdfasdf"))`
 * `astring.split(" ")` == list column by " " 
-the list operation:
+### the list operation:
 * `l1 + l2` == concatenate the list
 * `l1 * 3` 
 
@@ -437,78 +324,50 @@ for i, operation in enumerate(operations, start=1):
 #same for while
 ```
 
-## import
+## function
 
-files in your directory are modules which you can import.\
-usually you import local modules which are on your system.
+Block of code which only runs when it is called.\
+we do not use curly brackets, we use indentation with tabs or spaces 
 
-All code before `if __name__ == '__main__':` will be run.\
-The idea is to allow python be scripting languages and main languages.
+* `pass` == return null place order
+```python
+# create function 
+def sayhello(name = 'sam'):
+    print(f'hello {name}')
+sayhello('john dohn')
 
-* `dir(datetime)` == find all functions that are implemented
-* `help(datetime.date)` == info about the function
+#return values
+def getSum(num1, num2):
+    total = num1 + num2
+    return total
+print(getSum(3,4))
+
+#lambda function small anonymous function. (like arrow functions)
+getSum2 = lambda num1, num2 : num1 + num2
+print(getSum2(2,3))
+```
+## multiple function arguments
 
 ```python
-import datetime
-from datetime import date
+# edit the functions prototype and implementation
+def foo(a, b, c, *args):
+    return len(args)
 
-today = datetime.date.today()
-print(today)
+def bar(a, b, c, **kwargs):
+    return kwargs["magicnumber"] == 6
 
-today2 = date.today()
-print(today2)
 
-timstamp = date.time()
-print(timstamp)
+# test code
+if foo(0,2,3,4) == 1:
+    print("Good.")
+if foo(0,2,3,4,5) == 2:
+    print("Better.")
+if bar(0,2,3,magicnumber = 6) == False:
+    print("Great.")
+if bar(1,2,3,magicnumber = 7) == True:
 ```
 
-building module:
-```python
-# game.py
-# import the draw module
-import draw
 
-def play_game():
-    ...
-
-def main():
-    result = play_game()
-    draw.draw_game(result)
-
-# this means that if this script is executed, then 
-# main() will be executed
-if __name__ == '__main__':
-    main()
-```
-
-Learn Module:
-```python
-# Use the help function to see what each function does.
-# Delete this when you are done.
-help(dir)
-help(hasattr)
-help(id)
-
-# Define the Vehicle class.
-class Vehicle:
-    name = ""
-    kind = "car"
-    color = ""
-    value = 100.00
-    def description(self):
-        desc_str = "%s is a %s %s worth $%.2f." % (self.name, self.color, self.kind, self.value)
-        return desc_str
-
-# Print a list of all attributes of the Vehicle class.
-# Your code goes here
-print(dir(Vehicle))
-```
-## pip
-
-* `pip3 --version` == check by 
-* `pip3 install camelcase` == install locally `camelcase`
-* `pip3 freeze` == show modules installs
- 
 ## classes
 
 blueprint for creating objects. object has properties and methods associated with it.\
@@ -566,6 +425,7 @@ print(text)
 ```
 
 ## testing
+**note**: better use the `pytest` package.
 
 test module naming `test_calc` (test_name)
 
@@ -676,26 +536,180 @@ if type(fib()) == types.GeneratorType:
         if counter == 10:
             break
 ```
+# Libs and Packages
+## pip
 
-## multiple function arguments
+* `pip3 --version` == check by 
+* `pip3 install camelcase` == install locally `camelcase`
+* `pip3 freeze` == show modules installs
+## import
+
+files in your directory are modules which you can import.\
+usually you import local modules which are on your system.
+
+All code before `if __name__ == '__main__':` will be run.\
+The idea is to allow python be scripting languages and main languages.
+
+* `dir(datetime)` == find all functions that are implemented
+* `help(datetime.date)` == info about the function
 
 ```python
-# edit the functions prototype and implementation
-def foo(a, b, c, *args):
-    return len(args)
+import datetime
+from datetime import date
 
-def bar(a, b, c, **kwargs):
-    return kwargs["magicnumber"] == 7
+today = datetime.date.today()
+print(today)
 
+today2 = date.today()
+print(today2)
 
-# test code
-if foo(1,2,3,4) == 1:
-    print("Good.")
-if foo(1,2,3,4,5) == 2:
-    print("Better.")
-if bar(1,2,3,magicnumber = 6) == False:
-    print("Great.")
-if bar(1,2,3,magicnumber = 7) == True:
+timstamp = date.time()
+print(timstamp)
+```
+
+building module:
+```python
+# game.py
+# import the draw module
+import draw
+
+def play_game():
+    ...
+
+def main():
+    result = play_game()
+    draw.draw_game(result)
+
+# this means that if this script is executed, then 
+# main() will be executed
+if __name__ == '__main__':
+    main()
+```
+
+Learn Module:
+```python
+# Use the help function to see what each function does.
+# Delete this when you are done.
+help(dir)
+help(hasattr)
+help(id)
+
+# Define the Vehicle class.
+class Vehicle:
+    name = ""
+    kind = "car"
+    color = ""
+    value = 100.00
+    def description(self):
+        desc_str = "%s is a %s %s worth $%.2f." % (self.name, self.color, self.kind, self.value)
+        return desc_str
+
+# Print a list of all attributes of the Vehicle class.
+# Your code goes here
+print(dir(Vehicle))
+```
+
+## filter
+
+first of all, requires the function to return boolean values (true or false) and then passes each element in the iterable through the function, "filtering" away those that are false.\
+filter(func, iterable)
+
+```python
+dromes = ("demigod", "rewire", "madam", "freer", "anutforajaroftuna", "kiosk")
+
+palindromes = list(filter(lambda word: word == word[::-1], dromes))
+
+print(palindromes)
+```
+## Reduce
+reduce applies a function of two arguments cumulatively to the elements of an iterable, optionally starting with an initial argument. 
+
+```python
+from functools import reduce 
+
+# Use map to print the square of each numbers rounded
+# to two decimal places
+my_floats = [4.35, 6.09, 3.25, 9.77, 2.16, 8.88, 4.59]
+
+# Use filter to print only the names that are less than 
+# or equal to seven letters
+my_names = ["olumide", "akinremi", "josiah", "temidayo", "omoseun"]
+
+# Use reduce to print the product of these numbers
+my_numbers = [4, 6, 9, 23, 5]
+
+# Fix all three respectively.
+map_result = list(map(lambda x: x**2, my_floats))
+filter_result = list(filter(lambda name: len(name) <=7, my_names))
+reduce_result = reduce(lambda num1, num2: num1 * num2, my_numbers, 1)
+
+print(map_result)
+print(filter_result)
+print(reduce_result)
+```
+
+## Numpy arrays
+
+easy way to do caculation across entire arrays.
+
+```python
+# Create 2 new lists height and weight
+height = [1.87,  1.87, 1.82, 1.91, 1.90, 1.85]
+weight = [81.65, 97.52, 95.25, 92.98, 86.18, 88.45]
+
+# Import the numpy package as np
+import numpy as np
+
+# Create 2 numpy arrays from height and weight
+np_height = np.array(height)
+np_weight = np.array(weight)
+
+# Calculate bmi
+bmi = np_weight / np_height ** 2
+
+# Print the result
+print(bmi)
+```
+
+subsetting easy find
+```python
+# For a boolean response
+bmi > 23
+
+# Print only those observations above 23
+bmi[bmi > 23]
+```
+
+## Pandas
+
+Pandas is a high-level data manipulation tool developed by Wes McKinney. It is built on the Numpy package and its key data structure is called the DataFrame. 
+### DataFrame
+DataFrames allow you to store and manipulate tabular data in rows of observations and columns of variables.
+
+```python 
+dict = {"country": ["Brazil", "Russia", "India", "China", "South Africa"],
+       "capital": ["Brasilia", "Moscow", "New Dehli", "Beijing", "Pretoria"],
+       "area": [8.516, 17.10, 3.286, 9.597, 1.221],
+       "population": [200.4, 143.5, 1252, 1357, 52.98] }
+
+import pandas as pd
+brics = pd.DataFrame(dict)
+brics.index = ["BR", "RU", "IN", "CH", "SA"]
+print(brics)
+```
+
+* `pd.read_csv('cars.csv')` == read from csv
+* `print(cars['cars_per_cap'])` == print single index
+* `print(cars[0:4])` == access rows
+
+### Series
+One-dimensional ndarray with axis labels (including time series).
+
+"Easier" to work with dict as a vector (list)
+```python
+dict = {0:1, 1:4, 2:3 }
+sc = pd.Series(dict,name='Circle id')
+    sc.index.name = 'Id'
 ```
 
 ## serialization
@@ -721,3 +735,5 @@ print(decoded_salaries["Alfred"])
 print(decoded_salaries["Jane"])
 print(decoded_salaries["Me"])
 ```
+
+
