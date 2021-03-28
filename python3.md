@@ -22,6 +22,13 @@ if x == 1:
 * `print('hello %s' % name)` == c - style work with tuples
 
 **note**: other object will use their `tostring()` (like list)
+## Pathing
+
+for adding some module you must add the path to the script 
+```python
+sys.path.append(os.path.dirname(os.path.abspath(r'C:\Users\do2vl\Desktop\Laplacian')))
+import Laplacian.src.network_factory as nf
+```
 ## virtual environment
 
 creating virtual environment
