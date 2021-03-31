@@ -375,43 +375,6 @@ if bar(0,2,3,magicnumber = 6) == False:
 if bar(1,2,3,magicnumber = 7) == True:
 ```
 
-
-## classes
-
-blueprint for creating objects. object has properties and methods associated with it.\
-in python almost everything is an object
-
-```python
-# create class
-class User:
-    # constructor
-    def __init__(self, name):
-        self.name = name
-
-    def greeting(self):
-        return f'my name is {self.name}'
-""
-# Init user object
-brad = User('brad')
-print(type(brad))
-print(brad.name)
-print(brad.greeting())
-
-# extend class
-class Customer(User):
-    def __init__(self, name):
-        super().__init__(name)
-
-    def set_balance(self, balance):
-        self.balance = balance
-
-# Init user object
-janet = Customer('janet')
-janet.balance = 1""
-print(janet.balance)
-print(janet.greeting())
-```
-
 ## files
 
 ```python
@@ -543,6 +506,41 @@ if type(fib()) == types.GeneratorType:
         counter += 1
         if counter == 10:
             break
+```
+# classes
+
+blueprint for creating objects. object has properties and methods associated with it.\
+in python almost everything is an object
+
+```python
+# create class
+class User:
+    # constructor
+    def __init__(self, name):
+        self.name = name
+
+    def greeting(self):
+        return f'my name is {self.name}'
+""
+# Init user object
+brad = User('brad')
+print(type(brad))
+print(brad.name)
+print(brad.greeting())
+
+# extend class
+class Customer(User):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def set_balance(self, balance):
+        self.balance = balance
+
+# Init user object
+janet = Customer('janet')
+janet.balance = 1""
+print(janet.balance)
+print(janet.greeting())
 ```
 # Libs and Packages
 ## pip
