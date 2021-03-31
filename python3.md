@@ -115,6 +115,7 @@ They are index as mention and it support `Slice`
 * `[x*2 for x in vec]` == listing in a for loop equal to `squares = list(map(lambda x: x**2, range(10)))`
 * `mylist[0:]` == from index 0 to end
 * `sorted(list)` == return list sorted `list.sort()` will only sort the current list
+* `tuple(mylist)` == tuple my list
 
 ```python
 fruits = ['apple', 'oranges', 'grapes', 'pears']
