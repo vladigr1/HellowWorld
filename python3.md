@@ -270,8 +270,21 @@ print(uppered_pets)
 
 ### Set operations
 ```pytjon
-def intersection(lst1, lst2):
-    return list(set(lst1) & set(lst2))
+# sets are define
+A = {0, 2, 4, 6, 8};
+B = {1, 2, 3, 4, 5};
+  
+# union
+print("Union :", A | B)
+  
+# intersection
+print("Intersection :", A & B)
+  
+# difference
+print("Difference :", A - B)
+  
+# symmetric difference
+print("Symmetric difference :", A ^ B)
 ```
 
 **note**: The index() method is almost the same as the find() method, the only difference is that the find() method returns -1 if the value is not found.
