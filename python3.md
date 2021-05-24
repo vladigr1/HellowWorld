@@ -246,7 +246,8 @@ print(uppered_pets)
 
 ### the basic math:
 
-* `+`, `*`, `**`, `-`, `/`, `%`
+* `+`, `*`, `**`, `-`, `/`, `%`, `//`
+**note**: `//` is similar divide like in c
 
 ## the string operation:
 * `'hello' + 'world'`
@@ -266,6 +267,12 @@ print(uppered_pets)
 ### the list operation:
 * `l1 + l2` == concatenate the list
 * `l1 * 3` 
+
+### Set operations
+```pytjon
+def intersection(lst1, lst2):
+    return list(set(lst1) & set(lst2))
+```
 
 **note**: The index() method is almost the same as the find() method, the only difference is that the find() method returns -1 if the value is not found.
 ## condition
@@ -672,7 +679,7 @@ print(reduce_result)
 ## Numpy arrays
 
 easy way to do caculation across entire arrays.
-
+the array generated base on array
 ```python
 # Create 2 new lists height and weight
 height = [1.87,  1.87, 1.82, 1.91, 1.90, 1.85]
@@ -692,14 +699,25 @@ bmi = np_weight / np_height ** 2
 print(bmi)
 ```
 
-subsetting easy find
+subletting easy find
 ```python
 # For a boolean response
 bmi > 23
 
 # Print only those observations above 23
 bmi[bmi > 23]
+
 ```
+### Using np.where():
+similar to filter 
+
+```python
+
+def filter_where(arr, k):
+    return arr[np.where(arr < k)]
+```
+
+## np.histogram
 
 ## Pandas
 
